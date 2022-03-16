@@ -35,17 +35,23 @@ class _SearchListState extends State<SearchList> {
               ? const Center(
                   child: Text('Start typing'),
                 )
-              : ListView.builder(
+              : CustomScrollView(
                   keyboardDismissBehavior:
                       ScrollViewKeyboardDismissBehavior.onDrag,
-                  itemBuilder: (BuildContext context, int index) {
-                    if (index == state.previews.length - 1) _loadNext();
+                  slivers: [
+                    SliverList(
+                      delegate: SliverChildBuilderDelegate(
+                        (context, index) {
+                          if (index == state.previews.length - 1) _loadNext();
 
-                    return MovieListItem(
-                      moviePreview: state.previews[index],
-                    );
-                  },
-                  itemCount: state.previews.length,
+                          return MovieListItem(
+                            moviePreview: state.previews[index],
+                          );
+                        },
+                        childCount: state.previews.length,
+                      ),
+                    ),
+                  ],
                 ),
         ),
       );
