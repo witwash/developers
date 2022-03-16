@@ -39,7 +39,8 @@ class _SearchListState extends State<SearchList> {
                   keyboardDismissBehavior:
                       ScrollViewKeyboardDismissBehavior.onDrag,
                   slivers: [
-                    SliverList(
+                    SliverFixedExtentList(
+                      itemExtent: 100,
                       delegate: SliverChildBuilderDelegate(
                         (context, index) {
                           if (index == state.previews.length - 1) _loadNext();
