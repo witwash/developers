@@ -6,12 +6,12 @@ part of 'search_result.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-SearchResult _$SearchResultFromJson(Map<String, dynamic> json) =>
+_$_SearchResult _$$_SearchResultFromJson(Map<String, dynamic> json) =>
     $checkedCreate(
-      'SearchResult',
+      r'_$_SearchResult',
       json,
       ($checkedConvert) {
-        final val = SearchResult(
+        final val = _$_SearchResult(
           previews: $checkedConvert(
               'previews',
               (v) => (v as List<dynamic>)
@@ -28,7 +28,7 @@ SearchResult _$SearchResultFromJson(Map<String, dynamic> json) =>
       },
     );
 
-Map<String, dynamic> _$SearchResultToJson(SearchResult instance) =>
+Map<String, dynamic> _$$_SearchResultToJson(_$_SearchResult instance) =>
     <String, dynamic>{
       'previews': instance.previews.map((e) => e.toJson()).toList(),
       'total_pages': instance.totalPages,

@@ -1,4 +1,3 @@
-import 'package:movie_repository/src/models/member.dart';
 import 'package:tmdb_api/tmdb_api.dart'
     hide Movie, MoviePreview, Genre, SearchResult, Credits;
 import 'package:movie_repository/src/models/models.dart';

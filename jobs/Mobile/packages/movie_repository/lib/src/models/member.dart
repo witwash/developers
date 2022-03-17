@@ -1,13 +1,11 @@
-import 'package:json_annotation/json_annotation.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'member.g.dart';
+part 'member.freezed.dart';
 
-@JsonSerializable()
-class Member {
-  final String? posterPath;
-  final String name;
-  Member({
-    this.posterPath,
-    required this.name,
-  });
+@freezed
+class Member with _$Member {
+  const factory Member({required String name, String? posterPath}) = _Member;
+
+  factory Member.fromJson(json) => _$MemberFromJson(json);
 }
