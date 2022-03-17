@@ -6,27 +6,28 @@ part of 'company.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-Company _$CompanyFromJson(Map<String, dynamic> json) => $checkedCreate(
-      'Company',
+_$_Company _$$_CompanyFromJson(Map<String, dynamic> json) => $checkedCreate(
+      r'_$_Company',
       json,
       ($checkedConvert) {
-        final val = Company(
+        final val = _$_Company(
           name: $checkedConvert('name', (v) => v as String),
           id: $checkedConvert('id', (v) => v as int),
-          logoPath: $checkedConvert('logo_path', (v) => v as String?),
           originCountry: $checkedConvert('origin_country', (v) => v as String),
+          logoPath: $checkedConvert('logo_path', (v) => v as String?),
         );
         return val;
       },
       fieldKeyMap: const {
-        'logoPath': 'logo_path',
-        'originCountry': 'origin_country'
+        'originCountry': 'origin_country',
+        'logoPath': 'logo_path'
       },
     );
 
-Map<String, dynamic> _$CompanyToJson(Company instance) => <String, dynamic>{
+Map<String, dynamic> _$$_CompanyToJson(_$_Company instance) =>
+    <String, dynamic>{
       'name': instance.name,
       'id': instance.id,
-      'logo_path': instance.logoPath,
       'origin_country': instance.originCountry,
+      'logo_path': instance.logoPath,
     };

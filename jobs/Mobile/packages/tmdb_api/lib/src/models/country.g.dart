@@ -6,11 +6,11 @@ part of 'country.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-Country _$CountryFromJson(Map<String, dynamic> json) => $checkedCreate(
-      'Country',
+_$_Country _$$_CountryFromJson(Map<String, dynamic> json) => $checkedCreate(
+      r'_$_Country',
       json,
       ($checkedConvert) {
-        final val = Country(
+        final val = _$_Country(
           iso: $checkedConvert('iso_3166_1', (v) => v as String),
           name: $checkedConvert('name', (v) => v as String),
         );
@@ -19,7 +19,8 @@ Country _$CountryFromJson(Map<String, dynamic> json) => $checkedCreate(
       fieldKeyMap: const {'iso': 'iso_3166_1'},
     );
 
-Map<String, dynamic> _$CountryToJson(Country instance) => <String, dynamic>{
+Map<String, dynamic> _$$_CountryToJson(_$_Country instance) =>
+    <String, dynamic>{
       'iso_3166_1': instance.iso,
       'name': instance.name,
     };

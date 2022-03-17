@@ -1,19 +1,15 @@
-import 'package:json_annotation/json_annotation.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'language.g.dart';
+part 'language.freezed.dart';
 
-@JsonSerializable()
-class Language {
-  @JsonKey(name: 'iso_639_1')
-  final String iso;
-  final String name;
-  Language({
-    required this.iso,
-    required this.name,
-  });
+@freezed
+class Language with _$Language {
+  const factory Language({
+    @JsonKey(name: 'iso_639_1') required String iso,
+    required String name,
+  }) = _Language;
 
   factory Language.fromJson(Map<String, dynamic> json) =>
       _$LanguageFromJson(json);
-
-  Map<String, dynamic> toJson() => _$LanguageToJson(this);
 }

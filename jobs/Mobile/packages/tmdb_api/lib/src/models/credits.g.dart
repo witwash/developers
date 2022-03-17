@@ -6,11 +6,11 @@ part of 'credits.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-Credits _$CreditsFromJson(Map<String, dynamic> json) => $checkedCreate(
-      'Credits',
+_$_Credits _$$_CreditsFromJson(Map<String, dynamic> json) => $checkedCreate(
+      r'_$_Credits',
       json,
       ($checkedConvert) {
-        final val = Credits(
+        final val = _$_Credits(
           id: $checkedConvert('id', (v) => v as int),
           cast: $checkedConvert(
               'cast',
@@ -27,7 +27,8 @@ Credits _$CreditsFromJson(Map<String, dynamic> json) => $checkedCreate(
       },
     );
 
-Map<String, dynamic> _$CreditsToJson(Credits instance) => <String, dynamic>{
+Map<String, dynamic> _$$_CreditsToJson(_$_Credits instance) =>
+    <String, dynamic>{
       'id': instance.id,
       'cast': instance.cast.map((e) => e.toJson()).toList(),
       'crew': instance.crew.map((e) => e.toJson()).toList(),

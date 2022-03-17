@@ -1,22 +1,17 @@
-import 'package:json_annotation/json_annotation.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'company.g.dart';
+part 'company.freezed.dart';
 
-@JsonSerializable()
-class Company {
-  final String name;
-  final int id;
-  final String? logoPath;
-  final String originCountry;
-  Company({
-    required this.name,
-    required this.id,
-    this.logoPath,
-    required this.originCountry,
-  });
+@freezed
+class Company with _$Company {
+  const factory Company({
+    required String name,
+    required int id,
+    required String originCountry,
+    String? logoPath,
+  }) = _Company;
 
   factory Company.fromJson(Map<String, dynamic> json) =>
       _$CompanyFromJson(json);
-
-  Map<String, dynamic> toJson() => _$CompanyToJson(this);
 }

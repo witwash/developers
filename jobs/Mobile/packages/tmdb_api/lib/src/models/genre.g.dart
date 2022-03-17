@@ -6,11 +6,11 @@ part of 'genre.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-Genre _$GenreFromJson(Map<String, dynamic> json) => $checkedCreate(
-      'Genre',
+_$_Genre _$$_GenreFromJson(Map<String, dynamic> json) => $checkedCreate(
+      r'_$_Genre',
       json,
       ($checkedConvert) {
-        final val = Genre(
+        final val = _$_Genre(
           id: $checkedConvert('id', (v) => v as int),
           name: $checkedConvert('name', (v) => v as String),
         );
@@ -18,7 +18,7 @@ Genre _$GenreFromJson(Map<String, dynamic> json) => $checkedCreate(
       },
     );
 
-Map<String, dynamic> _$GenreToJson(Genre instance) => <String, dynamic>{
+Map<String, dynamic> _$$_GenreToJson(_$_Genre instance) => <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
     };

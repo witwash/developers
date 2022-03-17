@@ -6,13 +6,14 @@ part of 'cast_member.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-CastMember _$CastMemberFromJson(Map<String, dynamic> json) => $checkedCreate(
-      'CastMember',
+_$_CastMember _$$_CastMemberFromJson(Map<String, dynamic> json) =>
+    $checkedCreate(
+      r'_$_CastMember',
       json,
       ($checkedConvert) {
-        final val = CastMember(
+        final val = _$_CastMember(
           adult: $checkedConvert('adult', (v) => v as bool),
-          gender: $checkedConvert('gender', (v) => v as int?),
+          gender: $checkedConvert('gender', (v) => v as int),
           id: $checkedConvert('id', (v) => v as int),
           knownForDepartment:
               $checkedConvert('known_for_department', (v) => v as String),
@@ -37,7 +38,7 @@ CastMember _$CastMemberFromJson(Map<String, dynamic> json) => $checkedCreate(
       },
     );
 
-Map<String, dynamic> _$CastMemberToJson(CastMember instance) =>
+Map<String, dynamic> _$$_CastMemberToJson(_$_CastMember instance) =>
     <String, dynamic>{
       'adult': instance.adult,
       'gender': instance.gender,

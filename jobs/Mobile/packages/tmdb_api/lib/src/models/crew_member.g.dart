@@ -6,13 +6,14 @@ part of 'crew_member.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-CrewMember _$CrewMemberFromJson(Map<String, dynamic> json) => $checkedCreate(
-      'CrewMember',
+_$_CrewMember _$$_CrewMemberFromJson(Map<String, dynamic> json) =>
+    $checkedCreate(
+      r'_$_CrewMember',
       json,
       ($checkedConvert) {
-        final val = CrewMember(
+        final val = _$_CrewMember(
           adult: $checkedConvert('adult', (v) => v as bool),
-          gender: $checkedConvert('gender', (v) => v as int?),
+          gender: $checkedConvert('gender', (v) => v as int),
           id: $checkedConvert('id', (v) => v as int),
           knownForDepartment:
               $checkedConvert('known_for_department', (v) => v as String),
@@ -22,8 +23,8 @@ CrewMember _$CrewMemberFromJson(Map<String, dynamic> json) => $checkedCreate(
           profilePath: $checkedConvert(
               'profile_path', (v) => TMDbUtils.getFullPosterPath(v as String?)),
           creditId: $checkedConvert('credit_id', (v) => v as String),
-          department: $checkedConvert('department', (v) => v as String),
           job: $checkedConvert('job', (v) => v as String),
+          department: $checkedConvert('department', (v) => v as String),
         );
         return val;
       },
@@ -35,7 +36,7 @@ CrewMember _$CrewMemberFromJson(Map<String, dynamic> json) => $checkedCreate(
       },
     );
 
-Map<String, dynamic> _$CrewMemberToJson(CrewMember instance) =>
+Map<String, dynamic> _$$_CrewMemberToJson(_$_CrewMember instance) =>
     <String, dynamic>{
       'adult': instance.adult,
       'gender': instance.gender,
@@ -46,6 +47,6 @@ Map<String, dynamic> _$CrewMemberToJson(CrewMember instance) =>
       'popularity': instance.popularity,
       'profile_path': TMDbUtils.getAddedPosterPath(instance.profilePath),
       'credit_id': instance.creditId,
-      'department': instance.department,
       'job': instance.job,
+      'department': instance.department,
     };

@@ -1,65 +1,41 @@
-import 'package:json_annotation/json_annotation.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:tmdb_api/src/models/models.dart';
-import 'package:tmdb_api/src/models/movie_base.dart';
 import 'package:tmdb_api/src/utils/tmdb_utils.dart';
 
 part 'movie.g.dart';
+part 'movie.freezed.dart';
 
-@JsonSerializable()
-class Movie extends MovieBase {
-  final int budget;
-  final List<Genre> genres;
-  final String? homepage;
-  final String? imdbId;
-  final String? overview;
-  final List<Company> productionCompanies;
-  final List<Country> productionCountries;
-  final int revenue;
-  final int? runtime;
-  final List<Language> spokenLanguages;
-  final String status;
-  final String? tagline;
-
-  Movie({
-    required adult,
-    backdropPath,
-    required id,
-    required originalLanguage,
-    required originalTitle,
-    required popularity,
-    required posterPath,
-    releaseDate,
-    required title,
-    required video,
-    required voteAverage,
-    required voteCount,
-    required this.budget,
-    required this.genres,
-    required this.homepage,
-    required this.imdbId,
-    required this.overview,
-    required this.productionCompanies,
-    required this.productionCountries,
-    required this.revenue,
-    required this.runtime,
-    required this.spokenLanguages,
-    required this.status,
-    required this.tagline,
-  }) : super(
-            adult: adult,
-            backdropPath: backdropPath,
-            id: id,
-            originalLanguage: originalLanguage,
-            originalTitle: originalTitle,
-            popularity: popularity,
-            posterPath: posterPath,
-            releaseDate: releaseDate,
-            title: title,
-            video: video,
-            voteAverage: voteAverage,
-            voteCount: voteCount);
+@freezed
+class Movie with _$Movie {
+  const factory Movie({
+    required bool adult,
+    @JsonKey(fromJson: TMDbUtils.getFullPosterPath, toJson: TMDbUtils.getAddedPosterPath)
+        required String? backdropPath,
+    required int budget,
+    required List<Genre> genres,
+    required String? homepage,
+    required int id,
+    required String? imdbId,
+    required String originalLanguage,
+    required String originalTitle,
+    required String? overview,
+    required num popularity,
+    @JsonKey(fromJson: TMDbUtils.getFullPosterPath, toJson: TMDbUtils.getAddedPosterPath)
+        required String? posterPath,
+    required List<Company> productionCompanies,
+    required List<Country> productionCountries,
+    @JsonKey(fromJson: TMDbUtils.convertToDateTime)
+        required DateTime? releaseDate,
+    required int revenue,
+    required int? runtime,
+    required List<Language> spokenLanguages,
+    required String status,
+    required String? tagline,
+    required bool video,
+    required String title,
+    required num voteAverage,
+    required int voteCount,
+  }) = _Movie;
 
   factory Movie.fromJson(Map<String, dynamic> json) => _$MovieFromJson(json);
-
-  Map<String, dynamic> toJson() => _$MovieToJson(this);
 }
