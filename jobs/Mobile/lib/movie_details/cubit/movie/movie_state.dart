@@ -3,12 +3,13 @@ part of 'movie_cubit.dart';
 enum MovieStatus { initial, loading, success, failure }
 
 class MovieState extends Equatable {
-  MovieState({required this.movieId, required this.status, MovieDetails? movie})
-      : movie = movie ?? MovieDetails.empty;
+  MovieState(
+      {required this.movieId, required this.status, MovieDetails? movieDetails})
+      : movieDetails = movieDetails ?? MovieDetails.empty;
 
   final MovieStatus status;
   final int movieId;
-  final MovieDetails movie;
+  final MovieDetails movieDetails;
 
   MovieState copyWith({
     MovieStatus? status,
@@ -18,9 +19,9 @@ class MovieState extends Equatable {
       MovieState(
         status: status ?? this.status,
         movieId: movieId ?? this.movieId,
-        movie: movieDetails ?? this.movie,
+        movieDetails: movieDetails ?? this.movieDetails,
       );
 
   @override
-  List<Object> get props => [movieId, status, movie];
+  List<Object> get props => [movieId, status, movieDetails];
 }

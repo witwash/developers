@@ -20,7 +20,7 @@ class MovieDetailsView extends StatelessWidget {
                 case MovieStatus.loading:
                   return const _LoadingView(message: 'Loading...');
                 case MovieStatus.success:
-                  return MovieDetailsWidget(movieDetails: state.movie);
+                  return MovieDetailsWidget(movieDetails: state.movieDetails);
                 case MovieStatus.failure:
                 default:
                   return const _LoadingView(message: 'Error...');

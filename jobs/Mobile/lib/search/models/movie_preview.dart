@@ -1,32 +1,19 @@
-import 'package:equatable/equatable.dart';
-import 'package:json_annotation/json_annotation.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'movie_preview.g.dart';
+part 'movie_preview.freezed.dart';
 
-@JsonSerializable()
-class MoviePreview extends Equatable {
-  const MoviePreview({
-    this.posterPath,
-    required this.id,
-    required this.title,
-    required this.voteAverage,
-    required this.releaseDate,
-    required this.overview,
-  });
-
-  final String? posterPath;
-  final int id;
-  final String title;
-  final double voteAverage;
-  final DateTime? releaseDate;
-  final String overview;
+@freezed
+class MoviePreview with _$MoviePreview {
+  const factory MoviePreview({
+    required int id,
+    required String title,
+    required double voteAverage,
+    required DateTime? releaseDate,
+    required String overview,
+    String? posterPath,
+  }) = _MoviePreview;
 
   factory MoviePreview.fromJson(Map<String, dynamic> json) =>
       _$MoviePreviewFromJson(json);
-
-  Map<String, dynamic> toJson() => _$MoviePreviewToJson(this);
-
-  @override
-  List<Object?> get props =>
-      [posterPath, id, title, voteAverage, releaseDate, overview];
 }

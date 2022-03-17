@@ -6,31 +6,31 @@ part of 'search_result.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-SearchResult _$SearchResultFromJson(Map<String, dynamic> json) =>
+_$_SearchResult _$$_SearchResultFromJson(Map<String, dynamic> json) =>
     $checkedCreate(
-      'SearchResult',
+      r'_$_SearchResult',
       json,
       ($checkedConvert) {
-        final val = SearchResult(
+        final val = _$_SearchResult(
           previews: $checkedConvert(
               'previews',
               (v) => (v as List<dynamic>)
                   .map((e) => MoviePreview.fromJson(e as Map<String, dynamic>))
                   .toList()),
           totalPages: $checkedConvert('total_pages', (v) => v as int),
-          totalResults: $checkedConvert('total_results', (v) => v as int),
+          totalResult: $checkedConvert('total_result', (v) => v as int),
         );
         return val;
       },
       fieldKeyMap: const {
         'totalPages': 'total_pages',
-        'totalResults': 'total_results'
+        'totalResult': 'total_result'
       },
     );
 
-Map<String, dynamic> _$SearchResultToJson(SearchResult instance) =>
+Map<String, dynamic> _$$_SearchResultToJson(_$_SearchResult instance) =>
     <String, dynamic>{
       'previews': instance.previews.map((e) => e.toJson()).toList(),
       'total_pages': instance.totalPages,
-      'total_results': instance.totalResults,
+      'total_result': instance.totalResult,
     };

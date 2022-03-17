@@ -1,26 +1,18 @@
 import 'package:equatable/equatable.dart';
-import 'package:json_annotation/json_annotation.dart';
-import 'package:mews_imdb/search/models/movie_preview.dart';
+import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:mews_imdb/search/models/models.dart';
 
 part 'search_result.g.dart';
+part 'search_result.freezed.dart';
 
-@JsonSerializable()
-class SearchResult extends Equatable {
-  final List<MoviePreview> previews;
-  final int totalPages;
-  final int totalResults;
-
-  const SearchResult({
-    required this.previews,
-    required this.totalPages,
-    required this.totalResults,
-  });
+@freezed
+class SearchResult with _$SearchResult {
+  const factory SearchResult({
+    required List<MoviePreview> previews,
+    required int totalPages,
+    required int totalResult,
+  }) = _SearchResult;
 
   factory SearchResult.fromJson(Map<String, dynamic> json) =>
       _$SearchResultFromJson(json);
-
-  Map<String, dynamic> toJson() => _$SearchResultToJson(this);
-
-  @override
-  List<Object> get props => [previews, totalPages, totalResults];
 }

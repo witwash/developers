@@ -6,13 +6,12 @@ part of 'movie_preview.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-MoviePreview _$MoviePreviewFromJson(Map<String, dynamic> json) =>
+_$_MoviePreview _$$_MoviePreviewFromJson(Map<String, dynamic> json) =>
     $checkedCreate(
-      'MoviePreview',
+      r'_$_MoviePreview',
       json,
       ($checkedConvert) {
-        final val = MoviePreview(
-          posterPath: $checkedConvert('poster_path', (v) => v as String?),
+        final val = _$_MoviePreview(
           id: $checkedConvert('id', (v) => v as int),
           title: $checkedConvert('title', (v) => v as String),
           voteAverage:
@@ -20,22 +19,23 @@ MoviePreview _$MoviePreviewFromJson(Map<String, dynamic> json) =>
           releaseDate: $checkedConvert('release_date',
               (v) => v == null ? null : DateTime.parse(v as String)),
           overview: $checkedConvert('overview', (v) => v as String),
+          posterPath: $checkedConvert('poster_path', (v) => v as String?),
         );
         return val;
       },
       fieldKeyMap: const {
-        'posterPath': 'poster_path',
         'voteAverage': 'vote_average',
-        'releaseDate': 'release_date'
+        'releaseDate': 'release_date',
+        'posterPath': 'poster_path'
       },
     );
 
-Map<String, dynamic> _$MoviePreviewToJson(MoviePreview instance) =>
+Map<String, dynamic> _$$_MoviePreviewToJson(_$_MoviePreview instance) =>
     <String, dynamic>{
-      'poster_path': instance.posterPath,
       'id': instance.id,
       'title': instance.title,
       'vote_average': instance.voteAverage,
       'release_date': instance.releaseDate?.toIso8601String(),
       'overview': instance.overview,
+      'poster_path': instance.posterPath,
     };
