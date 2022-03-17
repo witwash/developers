@@ -22,4 +22,19 @@ class MovieDetails with _$MovieDetails {
 
   factory MovieDetails.fromJson(Map<String, dynamic> json) =>
       _$MovieDetailsFromJson(json);
+
+  static final empty = MovieDetails(
+    adult: false,
+    budget: 0,
+    genres: [],
+    id: 0,
+    title: 'none',
+    posterPath: null,
+    releaseDate: DateTime(2017, 9, 7, 17, 30),
+    voteAverage: 3.5,
+    voteCount: 100,
+    backdrop: 'something',
+    overview: 'long very long text',
+    runtime: 120,
+  );
 }
